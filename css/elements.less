@@ -1,0 +1,169 @@
+//Base font
+.base-font(@fontSize, @lineHeight, @fontWeight){
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  font-weight: @fontWeight;
+  font-family: Tahoma, sans-serif;
+};
+
+//Inputs
+input {
+  width: 110px;
+  padding: 6px;
+  .border-radius(5px);
+  border: 1px solid darken(@grey, 20%);
+
+}
+
+//Buttons
+button {
+  background: none;
+  border: none;
+}
+.btn {
+  margin-bottom: 1px;
+  background: @white;
+  border: 1px solid darken(@grey, 20%);
+  padding: 5px 10px;
+  cursor: pointer;
+  .border-radius(5px);
+  &:before {
+    font-family: FontAwesome;
+    font-size: 16px;
+  }
+  &.play {
+    &:before {
+      content: '\f04b';
+    }
+  }
+  &.pause {
+    &:before {
+      content: '\f04c';
+    }
+  }
+  &.search {
+    &:before {
+      content: '\f002';
+    }
+  }
+}
+
+//Border Radius
+.border-radius(@value){
+  -webkit-border-radius: @value;
+  -moz-border-radius: @value;
+  border-radius: @value;
+}
+
+//Select
+.select2.select2-container {
+  width: 110px !important;
+  margin-right: 10px;
+  .select2-selection__placeholder {
+    vertical-align: top;
+  }
+}
+
+//Flex Columns
+.flex-columns () {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//Expandable Elements
+.expandable {
+  margin-right: 25px;
+  cursor: pointer;
+  position: relative;
+  &:after {
+    content: "\f175";
+    font-family: FontAwesome;
+    position: absolute;
+    right: -20px;
+    font-size: 30px;
+    top: calc(~"50% - 15px");
+    color: darken(@red, 35%);
+  }
+  div {
+    visibility: hidden;
+    display: none;
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      visibility: visible;
+      display: block;
+    }
+  }
+  &.active {
+    &:after {
+      content: "\f176";
+    }
+    div {
+      visibility: visible;
+      display: block;
+    }
+  }
+}
+
+//Levels
+.level-btn,
+.level-blck {
+  color: @white;
+  margin: 3px;
+  padding: 6px;
+  text-transform: capitalize;
+  .border-radius(3px);
+  &.debug {
+    .gradient(@green, darken(@green, 10%));
+    &:hover {
+      .gradient(darken(@green, 10%), @green);
+    }
+  }
+  &.info {
+    .gradient(@blue, darken(@blue, 5%));
+    &:hover {
+      .gradient(darken(@blue, 5%), @blue);
+    }
+  }
+  &.error {
+    .gradient(@red, darken(@red, 10%));
+    &:hover {
+      .gradient(darken(@red, 10%), @red);
+    }
+  }
+  &.warning {
+    .gradient(@orange, darken(@orange, 5%));
+    &:hover {
+      .gradient(darken(@orange, 5%), @orange);
+    }
+  }
+  &.empty {
+    .gradient(darken(@grey, 45%), darken(@grey, 50%));
+    &:hover {
+      .gradient(darken(@grey, 50%), darken(@grey, 45%));
+    }
+  }
+}
+
+//Miscellous
+.right-position {
+  float: right;
+  display: inline-block;
+}
+* {
+  outline: none;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: table-row;
+}
+.error404 {
+  padding: 50px;
+  text-align: center;
+  .base-font(32px, normal, bold);
+}

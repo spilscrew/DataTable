@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/template.css"/>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/select2.min.css"/>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+<script src="js/select2.min.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Data Table</title>
+
+</head>
+
+<body>
+    <section class="wrap">
+        <header>Data Table</header>
+        <div class="filters">
+            <span class="filter_name">Level filter</span>
+            <select data-level class="filter filter_level">
+                <option class="level-btn empty" selected="selected">No filter</option>
+                <option class="level-btn warning">Warning</option>
+                <option class="level-btn debug">Debug</option>
+                <option class="level-btn info">Info</option>
+                <option class="level-btn error">Error</option>
+            </select>
+            <span class="filter_name">Service filter</span>
+            <select data-service class="filter filter_service">
+                <option class="level-btn empty" selected="selected">No filter</option>
+                <option class="level-btn empty">Aurelia</option>
+                <option class="level-btn empty">Aquamarine</option>
+            </select>
+            <span class="filter_name feed_control_name">Feed control</span>
+            <button class="btn feed_control pause"></button>
+            <div class="right-position">
+                <span class="filter_name text_file_name">Text search</span>
+                <input type="text" class="input_search">
+                <button class="btn search"></button>
+            </div>
+
+        </div>
+        <div class="table"></div>
+    </section>
+
+<script src="js/custom.js"></script>
+<script>
+    getData.init('sampleData.json', 2000, '.table');
+</script>
+</body>
+</html>

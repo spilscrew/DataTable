@@ -1,0 +1,16 @@
+//Theme Colors
+@white: #FFFFFF;
+@grey: #F7F7F7;
+@orange: #FFCC00;
+@blue: #00BBFA;
+@green: #4BED6B;
+@red: #FF213E;
+
+//Gradient
+.gradient(@startColor, @endColor) {
+  background: @startColor;
+  background: -moz-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: linear-gradient(to bottom, @startColor 0%, @endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@startColor, endColorstr=@endColor,GradientType=0 );
+}
